@@ -1,5 +1,5 @@
 const asyncHanadler =(requestHandler)=>{
-    (req,res,next)=>{
+    return (req,res,next)=>{
         Promise.resolve(requestHandler(req,res,next)).
         catch((err)=>next(err))
     }
@@ -8,8 +8,3 @@ const asyncHanadler =(requestHandler)=>{
 
 export {asyncHanadler}
 
-// const asyncHanadler =(fn)=>async(req,res,next)=>{
-//     try{
-
-//     }
-// }
